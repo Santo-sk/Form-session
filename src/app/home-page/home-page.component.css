@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+    color: white;
+    background-color: #26201f;
+  }
+
+  .toolbar-styles{
+      background-color: #26201f;
+  }
+
+  .example-container {
+      background-color: #26201f;
+    width: 100%;
+    height: 90%;
+    border: 1px solid #26201f;
+  }
+  
+  .example-sidenav-content {
+     
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    background-color:#26201f ;
+    padding: 20px;
+    width: 150px;
+  }
