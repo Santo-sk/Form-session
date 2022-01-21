@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  firstName:String;
+  lastName:String;
+  mailId:String;
+  phoneNo:number;
+  dob:String;
+  gender:String;
+
+
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.gender='M';
   }
 
+  saveDetails(){
+   
+let userdetails = {
+fName:this.firstName,
+lName:this.lastName,
+email:this.mailId,
+phone:this.phoneNo,
+dob:this.dob,
+gender:this.gender
+}
+sessionStorage.setItem('user-detail',JSON.stringify(userdetails));
+
+this.snackBar.open('Saved Successfully','',
+    { 
+      duration: 1000,
+      panelClass: ['snackbar-success']
+  });
+
+  }
 }

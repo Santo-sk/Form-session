@@ -1,2 +1,4 @@
-
+::ng-deep .snackbar-success{
+    background: green;
+}
 

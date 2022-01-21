@@ -16,6 +16,8 @@ import {MatInputModule} from '@angular/material/input'
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,MatIconModule,MatButtonModule,MatSidenavModule,MatCardModule,
-    MatFormFieldModule,MatInputModule,MatRadioModule,MatDatepickerModule,MatDialogModule
+    MatFormFieldModule,MatInputModule,MatRadioModule,MatDatepickerModule,MatDialogModule,
+    FormsModule,MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
