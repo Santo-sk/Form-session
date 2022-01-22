@@ -1,4 +1,18 @@
-.bg-style{
-    background-image: url("https://wallpaperaccess.com/black-abstract");
-   
+
+
+.toolbar-styles{
+    background-color:transparent;
 }
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  ::ng-deep .title-heading{
+    color: white;
+    font-size: 30px;
+    font-family: serif;
+     align-items: center;
+     margin-left: 25px;
+     
+  }

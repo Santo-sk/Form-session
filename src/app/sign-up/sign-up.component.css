@@ -1,4 +1,14 @@
 ::ng-deep .snackbar-success{
     background: green;
+    color: white;
+}
+
+.main-card-style{
+    width: 600px;
+    margin-top: 5%;
+    margin-left: 25%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    
 }
 
