@@ -1,15 +1,18 @@
 
 
 <mat-toolbar class="toolbar-styles">
-    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" matTooltip="Expand Menu">
       <mat-icon style="color: white;">menu</mat-icon>
     </button>
     <span class="title-heading">STG Infotech India</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" style="color: white;">
+    <button mat-icon-button class="example-icon favorite-icon" style="color: white;" matTooltip="Existing User Login" (click)="openLoginDialog()">
+      <mat-icon style="color: white;">login</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" style="color: white;" matTooltip="Settings">
       <mat-icon style="color: white;">settings</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" style="color: white;">
+    <button mat-icon-button class="example-icon" style="color: white;" matTooltip="Help Page">
       <mat-icon style="color: white;">help</mat-icon>
     </button>
   </mat-toolbar>

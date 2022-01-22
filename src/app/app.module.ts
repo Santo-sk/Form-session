@@ -16,14 +16,18 @@ import {MatInputModule} from '@angular/material/input'
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { LoginPageComponent } from './login-page/login-page.component';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     MatToolbarModule,MatIconModule,MatButtonModule,MatSidenavModule,MatCardModule,
     MatFormFieldModule,MatInputModule,MatRadioModule,MatDatepickerModule,MatDialogModule,
-    FormsModule,MatSnackBarModule
+    FormsModule,MatSnackBarModule,MatTooltipModule,MatRippleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
