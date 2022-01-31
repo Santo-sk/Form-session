@@ -1,4 +1,6 @@
 <div>
+  <mat-card class="main-card-style mat-elevation-z21">
+    <mat-card-title style="text-align: center;"> Login Here!!</mat-card-title><br>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <p>
         <mat-form-field appearance="outline">
@@ -46,4 +48,5 @@
         <button mat-button  matDialogClose style="background-color: rgb(158, 19, 19);color: white; margin-left: 50px;">Cancel</button>
       </p>
     </form>
+  </mat-card>
 </div>

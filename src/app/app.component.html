@@ -19,13 +19,13 @@
 
   <mat-drawer-container class="example-container">
     <mat-drawer #drawer class="example-sidenav mat-elevation-z15" mode="side" opened>
-      <button mat-raised-button class="navBar-headings">Admin</button>
-      <button mat-raised-button class="navBar-headings">Career</button>
+      <button mat-raised-button class="navBar-headings" (click)="navigateRegisterPage()">Register New User</button>
+      <button mat-raised-button class="navBar-headings" (click)="navigateLoginPage()">Existing User</button>
       <button mat-raised-button class="navBar-headings">More</button>
     </mat-drawer>
 
   
-      <app-sign-up></app-sign-up>
+     <router-outlet></router-outlet>
       
       <div id="footer">
         <p>&copy; Copyright 20222 STG Infotech. All Rights Reserved</p>
