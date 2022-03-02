@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginServiceService } from './service/login-service.service';
+import { Router } from '@angular/router';
+import { MatMessageService } from '../common/mat-message.service';
 
 @Component({
   selector: 'app-login-page',
@@ -10,28 +13,34 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginPageComponent implements OnInit {
 
   loginForm:any;
-  constructor(private snackBar: MatSnackBar) { }
+  loggedUserId:any;
+  loggedUserName:string;
+  detailsLogged:any=[];
+  constructor(private snackBar: MatSnackBar,private loginservice:LoginServiceService,private router:Router,
+    private messageservice:MatMessageService) { }
 
   ngOnInit(): void {
 
     this.loginForm=new FormGroup({
-     firstName:new FormControl('',[Validators.required,Validators.maxLength(5)]),
-     lastname:new FormControl('',[Validators.required]),
-     mailId:new FormControl('',[Validators.required]),
-     passcode:new FormControl('',[Validators.required]),
-     contactNo:new FormControl('',[Validators.required]),
-     dob:new FormControl('',[Validators.required])
+      user_id:new FormControl('',[Validators.required]),
+     passcode:new FormControl('',[Validators.required])
    })
   }
 
-  onSubmit(){
-    console.log(this.loginForm.value)
-    this.snackBar.open('Saved Successfully','',
-    { 
-      duration: 2000,
-      panelClass: ['snackbar-success'],
-      verticalPosition: 'top'
-  });
+  checkLogin(){
+  
+    let user_id=this.loginForm.value['user_id'];
+this.loginservice.loginUser(user_id).subscribe(data=>{
+this.detailsLogged=JSON.stringify(data);
+this.messageservice.showSuccess('Login Successfully');
+this.router.navigate(['logged-page'],{ state:{ details:this.detailsLogged},
+});
+
+},(error)=>{
+ this.messageservice.showError('Server Error')
+});
+  
   }
+
 
 }

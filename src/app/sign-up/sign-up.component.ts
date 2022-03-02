@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { RegisterServiceService } from './service/register-service.service';
+import { Router } from '@angular/router';
+import { MatMessageService } from '../common/mat-message.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,50 +12,35 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class SignUpComponent implements OnInit {
 
-  // firstName:String;
-  // lastName:String;
-  // mailId:String;
-  // phoneNo:number;
-  // dob:String;
-  // gender:String;
+  showLoading:boolean;
 
   userForm: NgForm | undefined;
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private registerservice:RegisterServiceService,private router:Router,
+    private messageService:MatMessageService) { }
 
   ngOnInit(): void {
-    // this.gender='M';
+   
   }
 
-//   saveDetails(){
-   
-// let userdetails = {
-// fName:this.firstName,
-// lName:this.lastName,
-// email:this.mailId,
-// phone:this.phoneNo,
-// dob:this.dob,
-// gender:this.gender
-// }
-// sessionStorage.setItem('user-detail',JSON.stringify(userdetails));
+  onSubmit(userForm){
 
-// this.snackBar.open('Saved Successfully','',
-//     { 
-//       duration: 1000,
-//       panelClass: ['snackbar-success']
-//   });
+    this.showLoading=true;
 
-//   }
+   const formDetails = userForm.value;
+   console.log(formDetails);
+   this.registerservice.registerUser(formDetails).subscribe(res =>{
+    this.messageService.showSuccess('Registered Successfully');
 
-  onSubmit(userForm: NgForm){
-    sessionStorage.setItem('user-detail-template',JSON.stringify(userForm.value));
+  this.showLoading=false;
+  this.router.navigateByUrl('home-page');
+   },
+   error=>{
+    this.messageService.showError('Server Error');
+  this.showLoading=false;
+   })
 
-this.snackBar.open('Saved Successfully','',
-    { 
-      duration: 2000,
-      panelClass: ['snackbar-success'],
-      verticalPosition: 'top'
-  });
+
   
   }
 }

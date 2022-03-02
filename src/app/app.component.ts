@@ -11,24 +11,25 @@ import { LoginPageComponent } from './login-page/login-page.component';
 export class AppComponent {
   title = 'session-forms';
 
-  constructor(private dialog:MatDialog,
-    private router:Router){
+  constructor(private dialog: MatDialog,
+    private router: Router) {
 
   }
-  openLoginDialog(){
-this.dialog.open(LoginPageComponent)
-  }
-  
-  navigateRegisterPage(){
-this.router.navigate(['/','sign-page']).then(nav => {
-  console.log(nav); // true if navigation is successful
-}, err => {
-  console.log(err) // when there's an error
-});
-
+  openLoginDialog() {
+    this.dialog.open(LoginPageComponent)
   }
 
-  navigateLoginPage(){
+  //To navigate to register page using router.navigate method
+  navigateRegisterPage() {
+    this.router.navigate(['/', 'sign-page']).then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
+  }
+
+  //To navigate to login page using router.navigateByUrl method
+  navigateLoginPage() {
     this.router.navigateByUrl('login-page');
   }
 }

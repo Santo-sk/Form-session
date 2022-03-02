@@ -7,3 +7,14 @@ body { margin: 0;
     background-size: 100% ;  
     background-size: cover; 
 }
+
+.snack-bar-error{
+    background-color: firebrick;
+  color:white;
+}
+
+.snack-bar-success{
+    background-color: green;
+  color:white;
+  
+}

@@ -21,13 +21,17 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {MatRippleModule} from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import { LoggedInPageComponent } from './logged-in-page/logged-in-page.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     SignUpComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    LoggedInPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,7 @@ import {MatRippleModule} from '@angular/material/core';
     MatToolbarModule,MatIconModule,MatButtonModule,MatSidenavModule,MatCardModule,
     MatFormFieldModule,MatInputModule,MatRadioModule,MatDatepickerModule,MatDialogModule,
     FormsModule,MatSnackBarModule,MatTooltipModule,MatRippleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,HttpClientModule,MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

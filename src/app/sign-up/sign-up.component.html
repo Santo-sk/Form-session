@@ -3,6 +3,7 @@
 
 
 <mat-card class="main-card-style mat-elevation-z21">
+  <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar><br>
     <mat-card-title style="text-align: center;"> Register Here!!</mat-card-title><br>
    
 <div>
@@ -23,20 +24,20 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>E-mail</mat-label>
-          <input matInput placeholder="Ex. pat@example.com" id="mailId" name="mailId" required ngModel>
+          <input matInput placeholder="Ex. pat@example.com" id="mailId" name="mail" required ngModel>
           <mat-icon matSuffix> email</mat-icon>
         </mat-form-field>
 
         <mat-form-field appearance="outline" style="margin-left: 50px;">
           <mat-label>Contact No</mat-label>
-          <input matInput type="tel" placeholder="555-555-1234" id="phoneNo" name="phoneNo" ngModel>
+          <input matInput type="tel" placeholder="555-555-1234" id="phoneNo" name="phone" ngModel>
           <mat-icon matSuffix>phone_iphone</mat-icon>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Create New Password</mat-label>
-          <input matInput type="password"  id="pass" name="pass" required ngModel>
+          <input matInput type="password"  id="pass" name="passcode" required ngModel>
           <mat-icon matSuffix>visibility_off</mat-icon>
         </mat-form-field>
   
